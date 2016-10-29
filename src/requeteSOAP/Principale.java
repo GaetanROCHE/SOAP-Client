@@ -1,4 +1,4 @@
-package requeteSOAP;
+/*package requeteSOAP;
 
 public class Principale {
 
@@ -13,12 +13,12 @@ public class Principale {
 		// TODO Auto-generated method stub
 		try {
 			unAppel.connexion();
-			unAppel.creationMessageListePays(operation, destination);
-			unAppel.emissionReceptionUnPays(destenvoi);
-			
+			unAppel.creationMessageListePays();
+			unAppel.emissionReceptionUnPays();
+
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 	}
-
 }
+*/
