@@ -13,8 +13,8 @@ public class Principale {
 		// TODO Auto-generated method stub
 		try {
 			unAppel.connexion();
-			unAppel.creationMessageListePays();
-			unAppel.emissionReceptionUnPays();
+			unAppel.creationMessageListePays(operation, destination);
+			unAppel.emissionReceptionUnPays(destenvoi);
 			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
