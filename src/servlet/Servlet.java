@@ -3,6 +3,7 @@ package servlet;
 import metier.Pays;
 import requeteSOAP.EnvoiMessageSOAP;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,7 +31,8 @@ public class Servlet extends HttpServlet {
             System.out.println(e.getMessage());
         }
         request.setAttribute("list_pays", res);
-        this.getServletContext().getRequestDispatcher( "/index.jsp" ).forward( request, response );
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
+        dispatcher.forward( request, response );
     }
 
 
