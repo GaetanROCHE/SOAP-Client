@@ -21,19 +21,34 @@ public class Servlet extends HttpServlet {
 
 
     public void doGet(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
-        List<Pays> res = new ArrayList<>();
-        try {
-            unAppel.connexion();
-            unAppel.creationMessageListePays();
-            res = unAppel.emissionReceptionPays();
+        unAppel.connexion();
+        unAppel.creationMessageListePays();
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        String paysName = request.getParameter("pays");
+        if(paysName != null){
+            try {
+                Pays resP;
+                resP = unAppel.getUnPays(paysName);
+                request.setAttribute("pays", resP);
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/details_pays.jsp");
+                dispatcher.forward(request, response);
+
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }else {
+            try {
+                List<Pays> res;
+                res = unAppel.emissionReceptionPays();
+                request.setAttribute("list_pays", res);
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
+                dispatcher.forward(request, response);
+
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
         }
-        request.setAttribute("list_pays", res);
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
-        dispatcher.forward( request, response );
     }
 
 
-    }
+}

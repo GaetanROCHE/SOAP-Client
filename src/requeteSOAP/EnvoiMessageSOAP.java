@@ -10,10 +10,8 @@ import javax.xml.soap.SOAPEnvelope;
 import javax.xml.soap.SOAPBody;
 import javax.xml.soap.SOAPElement;
 import javax.xml.transform.*;
-import javax.xml.transform.stream.*;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.w3c.dom.Node;

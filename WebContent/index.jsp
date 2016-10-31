@@ -25,7 +25,7 @@
     </tr>
     <c:forEach items="${list_pays}" var="pays">
         <tr>
-            <td>${pays.nomPays}</td>
+            <td><a href="?pays=${pays.nomPays}">${pays.nomPays}</a></td>
             <td>${pays.nomCapitale}</td>
             <td>${pays.nbhabitants}</td>
             <td><img src="https://maps.googleapis.com/maps/api/staticmap?center=${pays.nomPays}&size=100x100" /></td>
