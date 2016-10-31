@@ -24,8 +24,17 @@ public class Servlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
 
+        System.out.println(request.getRequestURL());
         processusTraiteRequete(request, response);
     }
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+
+        System.out.println(request.getRequestURL());
+        processusTraiteRequete(request, response);
+    }
+
+
 
     public void processusTraiteRequete(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

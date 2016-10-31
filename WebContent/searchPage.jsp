@@ -7,13 +7,16 @@
             <div class="well">
                 <div class="form-group">
                     <label for="pays">Search:</label>
-                    <input type=text list=pays >
-                    <datalist id=pays >
-                        <c:forEach items="${list_pays}" var="pays">
-                            <option> ${pays.nomPays} </option>
-                        </c:forEach>
-                    </datalist>
-                    <a><button>Submit</button></a>
+
+                    <form name="search" action = "Servlet?action=detailsPays" method ="post">
+                        <input list=pays name="pays" >
+                            <datalist id=pays >
+                                <c:forEach items="${list_pays}" var="pays">
+                                    <option> ${pays.nomPays} </option>
+                                </c:forEach>
+                            </datalist>
+                        <button type = submit>Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
