@@ -10,9 +10,10 @@
                     <input type=text list=pays >
                     <datalist id=pays >
                         <c:forEach items="${list_pays}" var="pays">
-                            <option> ${pays.nomPays}
+                            <option> ${pays.nomPays} </option>
                         </c:forEach>
                     </datalist>
+                    <a><button>Submit</button></a>
                 </div>
             </div>
         </div>

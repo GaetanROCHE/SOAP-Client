@@ -9,21 +9,23 @@
 --%>
 
 <body>
-<table class="table">
-    <tr>
-        <th>Pays</th>
-        <th>Capitale</th>
-        <th>Nombre d'habitants</th>
-        <th>Maps</th>
-    </tr>
-    <c:forEach items="${list_pays}" var="pays">
-        <tr>
-            <td>${pays.nomPays}</td>
-            <td>${pays.nomCapitale}</td>
-            <td>${pays.nbhabitants}</td>
-            <td><img src="https://maps.googleapis.com/maps/api/staticmap?center=${pays.nomPays}&size=100x100" /></td>
-        </tr>
-    </c:forEach>
-</table>
+    <div style="padding: 50px">
+        <table class="table">
+            <tr style="border: coral; background: darkorange;">
+                <th>Pays</th>
+                <th>Capitale</th>
+                <th>Nombre d'habitants</th>
+                <th>Maps</th>
+            </tr>
+            <c:forEach items="${list_pays}" var="pays">
+                <tr style="border: coral; background: peachpuff; border-radius: 10px; padding: 40px;">
+                    <td><a href="Servlet?action=detailsPays&pays=${pays.nomPays}"> ${pays.nomPays} </td>
+                    <td>${pays.nomCapitale}</td>
+                    <td>${pays.nbhabitants}</td>
+                    <td><img src="https://maps.googleapis.com/maps/api/staticmap?center=${pays.nomPays}&size=100x100" /></td>
+                </tr>
+            </c:forEach>
+        </table>
+    </div>
 </body>
 </html>
