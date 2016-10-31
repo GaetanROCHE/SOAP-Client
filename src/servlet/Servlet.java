@@ -31,6 +31,7 @@ public class Servlet extends HttpServlet {
             throws ServletException, IOException {
 
         String action = request.getParameter("action");
+        System.out.println("Action " + action);
         RequestDispatcher dispatcher;
         if(action == null){
             unAppel.connexion();
@@ -68,12 +69,7 @@ public class Servlet extends HttpServlet {
                     unAppel.creationMessageListePays();
                     List<Pays> res2;
                     res2 = unAppel.emissionReceptionPays();
-                    List<String> nomPays = new ArrayList<>();
-                    for (Pays pays: res2)
-                    {
-                        nomPays.add(pays.getNomPays().replaceAll(" ",""));
-                    }
-                    request.setAttribute("nomPays", nomPays);
+                    request.setAttribute("list_pays", res2);
                     dispatcher = getServletContext().getRequestDispatcher("/searchPage.jsp");
                     dispatcher.forward(request, response);
 
